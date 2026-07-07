@@ -2,62 +2,227 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 overflow-x-hidden ${
-        scrolled
-          ? "bg-black/90 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-4 md:px-8">
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-slate-900/80 backdrop-blur-xl shadow-lg border-b border-white/10"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto h-20 px-5 lg:px-8 flex items-center justify-between">
 
-        {/* Logo */}
-        <a href="#hero" className="flex items-center gap-3">
-          <Image
-            src="/images/logo.jpg"
-            alt="Levels On Ice"
-            width={50}
-            height={50}
-            className="rounded-full"
-          />
-          <h1 className="hidden sm:block text-xl lg:text-2xl font-bold tracking-wider text-white">
-            LEVELS ON ICE
-          </h1>
-        </a>
+          {/* Logo */}
+          <a
+            href="#hero"
+            className="flex items-center gap-3"
+          >
+            <Image
+              src="/images/logo.jpg"
+              alt="Levels On Ice"
+              width={52}
+              height={52}
+              className="rounded-full"
+            />
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
-          <a href="#hero" className="hover:text-lime-400 transition">Home</a>
-          <a href="#about" className="hover:text-lime-400 transition">About</a>
-          <a href="#experience" className="hover:text-lime-400 transition">Experience</a>
-          <a href="#prices" className="hover:text-lime-400 transition">Pricing</a>
-          <a href="#gallery" className="hover:text-lime-400 transition">Gallery</a>
-          <a href="#contact" className="hover:text-lime-400 transition">Contact</a>
+            <span className="hidden sm:block text-xl lg:text-2xl font-bold tracking-widest text-white">
+              LEVELS ON ICE
+            </span>
+          </a>
+                    {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
+
+            <a
+              href="#hero"
+              className="transition hover:text-lime-400"
+            >
+              Home
+            </a>
+
+            <a
+              href="#about"
+              className="transition hover:text-lime-400"
+            >
+              About
+            </a>
+
+            <a
+              href="#experience"
+              className="transition hover:text-lime-400"
+            >
+              Experience
+            </a>
+
+            <a
+              href="#prices"
+              className="transition hover:text-lime-400"
+            >
+              Pricing
+            </a>
+
+            <a
+              href="#gallery"
+              className="transition hover:text-lime-400"
+            >
+              Gallery
+            </a>
+
+            <a
+              href="#contact"
+              className="transition hover:text-lime-400"
+            >
+              Contact
+            </a>
+
+          </nav>
+
+          {/* Right Side */}
+          <div className="flex items-center gap-4">
+
+            {/* Desktop Book Button */}
+            <a
+              href="#booking"
+              className="hidden lg:flex items-center justify-center bg-lime-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-lime-300 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-lime-400/30"
+            >
+              Book Now
+            </a>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="lg:hidden text-white text-3xl transition"
+            >
+              {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+
+          </div>
+
+        </div>
+      </header>
+            {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 right-0 h-screen w-80 max-w-[85%] bg-slate-900 shadow-2xl z-[60] transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between p-6 border-b border-slate-700">
+
+          <h2 className="text-white text-xl font-bold">
+            MENU
+          </h2>
+
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="text-white text-3xl hover:text-lime-400 transition"
+          >
+            <FaTimes />
+          </button>
+
+        </div>
+
+        <nav className="flex flex-col p-8 space-y-6 text-lg">
+
+          <a
+            href="#hero"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            Home
+          </a>
+
+          <a
+            href="#about"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            About
+          </a>
+
+          <a
+            href="#services"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            Services
+          </a>
+
+          <a
+            href="#experience"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            Experience
+          </a>
+
+          <a
+            href="#prices"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            Pricing
+          </a>
+
+          <a
+            href="#gallery"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="#booking"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            Book Appointment
+          </a>
+
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:text-lime-400 transition"
+          >
+            Contact
+          </a>
+
+          <a
+            href="#booking"
+            onClick={() => setMenuOpen(false)}
+            className="mt-8 bg-lime-400 text-black font-bold py-4 rounded-full text-center hover:bg-lime-300 transition"
+          >
+            Book Now
+          </a>
+
         </nav>
-
-        {/* Book Button */}
-        <a
-          href="#booking"
-          className="hidden lg:flex items-center justify-center bg-lime-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-lime-300 transition-all duration-300 hover:scale-105"
-        >
-          Book Now
-        </a>
-
       </div>
-    </header>
+
+      {/* Dark Overlay */}
+      {menuOpen && (
+        <div
+          onClick={() => setMenuOpen(false)}
+          className="fixed inset-0 bg-black/60 z-50 lg:hidden"
+        />
+      )}
+          </>
   );
 }
