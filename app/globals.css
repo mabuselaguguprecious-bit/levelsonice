@@ -1,43 +1,52 @@
 @import "tailwindcss";
 
-/* ————— Reset & Base ————— */
+/* === URGENT MOBILE FIX – EVERYTHING STAYS INSIDE === */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  max-width: 100%;          /* ← prevents any element from exceeding viewport */
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;       /* ← kill horizontal scroll on html too */
-  width: 100%;
+  overflow-x: hidden !important;
+  width: 100% !important;
 }
 
 body {
-  overflow-x: hidden;       /* ← redundant but safe */
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background: #f8fafc;      /* ← change to your preferred light grey, not black */
-  color: #0f172a;           /* ← slate-900, typical text colour */
+  overflow-x: hidden !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #f8fafc;
+  color: #0f172a;
   font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* ————— Images & media ————— */
+/* === IMAGES === */
 img,
 video,
-iframe,
 svg,
-picture {
-  display: block;
+iframe {
   max-width: 100% !important;
   height: auto !important;
+  display: block;
 }
 
-/* ————— Containers ————— */
-.container,
+/* === ALL CONTAINERS === */
+section,
+div,
+main,
+header,
+footer,
+article,
+aside,
+nav {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* === TAILWIND CONTAINERS === */
 .max-w-7xl,
 .max-w-6xl,
 .max-w-5xl,
@@ -46,28 +55,32 @@ picture {
 .max-w-2xl,
 .max-w-xl,
 .max-w-lg,
-.max-w-md {
+.max-w-md,
+.container {
   max-width: 100% !important;
   padding-left: 16px !important;
   padding-right: 16px !important;
-  overflow: hidden !important;
 }
 
-/* ————— Reset negative margins that cause overflow ————— */
+/* === REMOVE NEGATIVE MARGINS === */
 [class*="mx-"]:not([class*="mx-auto"]):not([class*="mx-0"]),
 [class*="-mx-"],
-.-ml-4, .-mr-4, .-ml-8, .-mr-8,
-.ml-\[-10px\], .mr-\[-10px\] {
+.-ml-4,
+.-mr-4,
+.-ml-8,
+.-mr-8,
+.ml-\[-10px\],
+.mr-\[-10px\] {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-/* ————— Grid fix ————— */
+/* === GRID FIX === */
 .grid {
   max-width: 100% !important;
 }
 
-/* ————— Hide scrollbar (optional) ————— */
+/* === HIDE SCROLLBAR (optional) === */
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
