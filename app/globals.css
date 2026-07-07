@@ -1,19 +1,74 @@
 @import "tailwindcss";
 
-html{
-scroll-behavior: smooth;
+/* ————— Reset & Base ————— */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  max-width: 100%;          /* ← prevents any element from exceeding viewport */
 }
 
-body{
-    overflow-x:hidden;
-    
-margin:0;
-padding:0;
-background:#000;
-color:white;
-font-family:Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;       /* ← kill horizontal scroll on html too */
+  width: 100%;
 }
 
-*{
-box-sizing:border-box;
+body {
+  overflow-x: hidden;       /* ← redundant but safe */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;      /* ← change to your preferred light grey, not black */
+  color: #0f172a;           /* ← slate-900, typical text colour */
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ————— Images & media ————— */
+img,
+video,
+iframe,
+svg,
+picture {
+  display: block;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ————— Containers ————— */
+.container,
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-3xl,
+.max-w-2xl,
+.max-w-xl,
+.max-w-lg,
+.max-w-md {
+  max-width: 100% !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  overflow: hidden !important;
+}
+
+/* ————— Reset negative margins that cause overflow ————— */
+[class*="mx-"]:not([class*="mx-auto"]):not([class*="mx-0"]),
+[class*="-mx-"],
+.-ml-4, .-mr-4, .-ml-8, .-mr-8,
+.ml-\[-10px\], .mr-\[-10px\] {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ————— Grid fix ————— */
+.grid {
+  max-width: 100% !important;
+}
+
+/* ————— Hide scrollbar (optional) ————— */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
