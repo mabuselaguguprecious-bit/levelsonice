@@ -4,100 +4,78 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const [showNavbar, setShowNavbar] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
+      setScrolled(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        showNavbar ? "translate-y-0 bg-transparent" : "-translate-y-full"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-black/90 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-4 md:px-8">
 
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-4">
+        <a href="#hero" className="flex items-center gap-3">
 
           <Image
             src="/images/logo.jpg"
             alt="Levels On Ice"
-            width={55}
-            height={55}
+            width={50}
+            height={50}
             className="rounded-full"
           />
 
-          <h1 className="text-2xl font-bold tracking-widest text-white">
+          <h1 className="hidden sm:block text-xl lg:text-2xl font-bold tracking-wider text-white">
             LEVELS ON ICE
           </h1>
 
         </a>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-white font-medium">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
 
-          <a
-            href="#hero"
-            className="hover:text-lime-400 transition duration-300"
-          >
+          <a href="#hero" className="hover:text-lime-400 transition">
             Home
           </a>
 
-          <a
-            href="#about"
-            className="hover:text-lime-400 transition duration-300"
-          >
+          <a href="#about" className="hover:text-lime-400 transition">
             About
           </a>
 
-          <a
-            href="#experience"
-            className="hover:text-lime-400 transition duration-300"
-          >
+          <a href="#experience" className="hover:text-lime-400 transition">
             Experience
           </a>
 
-          <a
-            href="#prices"
-            className="hover:text-lime-400 transition duration-300"
-          >
+          <a href="#prices" className="hover:text-lime-400 transition">
             Pricing
           </a>
 
-          <a
-            href="#gallery"
-            className="hover:text-lime-400 transition duration-300"
-          >
+          <a href="#gallery" className="hover:text-lime-400 transition">
             Gallery
           </a>
 
-          <a
-            href="#contact"
-            className="hover:text-lime-400 transition duration-300"
-          >
+          <a href="#contact" className="hover:text-lime-400 transition">
             Contact
           </a>
 
         </nav>
 
-        {/* Book Now Button */}
+        {/* Book Button */}
         <a
           href="#booking"
-          className="hidden md:flex items-center justify-center bg-lime-400 text-black px-7 py-3 rounded-full font-semibold hover:bg-lime-300 hover:scale-105 transition-all duration-300"
+          className="hidden lg:flex items-center justify-center bg-lime-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-lime-300 transition-all duration-300 hover:scale-105"
         >
           Book Now
         </a>
