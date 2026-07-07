@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-x-hidden w-full"
     >
       {/* Background Image */}
       <Image
@@ -26,7 +26,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="relative z-20 w-full max-w-5xl px-6 text-center"
+        className="relative z-20 w-full max-w-5xl px-6 text-center mx-auto"
       >
         {/* Subtitle */}
         <p className="mt-20 md:mt-10 uppercase tracking-[4px] md:tracking-[8px] text-lime-400 text-sm md:text-lg">
