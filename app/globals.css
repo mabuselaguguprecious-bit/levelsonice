@@ -1,14 +1,16 @@
+/* ============================================
+   URGENT FIX – FULL TAILWIND + RESPONSIVE
+   ============================================ */
+
+/* --- Import Tailwind --- */
 @import "tailwindcss";
 
-/* ======================================================
-   MOBILE-FIRST RESPONSIVE RESET – NO DESIGN CHANGES
-   ====================================================== */
-
+/* --- Complete Reset --- */
 *,
 *::before,
 *::after {
-  max-width: 100% !important;
   box-sizing: border-box !important;
+  max-width: 100% !important;
 }
 
 html {
@@ -25,9 +27,11 @@ body {
   background: #f8fafc;
   color: #0f172a;
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Images & media --- */
+/* --- Images --- */
 img,
 video,
 svg,
@@ -37,7 +41,7 @@ iframe {
   display: block;
 }
 
-/* --- All containers --- */
+/* --- All Containers --- */
 section,
 div,
 main,
@@ -50,7 +54,7 @@ nav {
   overflow-x: hidden !important;
 }
 
-/* --- Tailwind containers --- */
+/* --- Tailwind Containers --- */
 .max-w-7xl,
 .max-w-6xl,
 .max-w-5xl,
@@ -66,26 +70,63 @@ nav {
   padding-right: 16px !important;
 }
 
-/* --- Grids --- */
+/* --- Grid Fix --- */
 .grid {
   max-width: 100% !important;
 }
 
-/* --- Kill negative margins --- */
+/* --- Remove Negative Margins --- */
 [class*="mx-"]:not([class*="mx-auto"]):not([class*="mx-0"]),
 [class*="-mx-"],
 .-ml-4,
 .-mr-4,
 .-ml-8,
-.-mr-8,
-.ml-\[-10px\],
-.mr-\[-10px\] {
+.-mr-8 {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-/* --- Hide scrollbar (optional) --- */
+/* --- Navbar Fix --- */
+header {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* --- Hide Scrollbar (optional) --- */
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+/* --- Force Mobile Rendering --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .max-w-7xl,
+  .max-w-5xl,
+  .max-w-3xl {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  /* Fix grid on mobile */
+  .grid {
+    display: grid !important;
+  }
+  
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+  
+  /* Fix flex on mobile */
+  .flex {
+    display: flex !important;
+  }
+  
+  .flex-col {
+    flex-direction: column !important;
+  }
 }
