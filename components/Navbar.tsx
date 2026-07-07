@@ -22,14 +22,15 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Navbar */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-slate-900/80 backdrop-blur-xl shadow-lg border-b border-white/10"
+            ? "bg-white/90 backdrop-blur-xl shadow-lg"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto h-20 px-5 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-5 lg:px-8">
 
           {/* Logo */}
           <a
@@ -44,51 +45,90 @@ export default function Navbar() {
               className="rounded-full"
             />
 
-            <span className="hidden sm:block text-xl lg:text-2xl font-bold tracking-widest text-white">
+            <span
+              className={`hidden sm:block text-xl lg:text-2xl font-bold tracking-widest transition ${
+                scrolled ? "text-slate-900" : "text-white"
+              }`}
+            >
               LEVELS ON ICE
             </span>
           </a>
                     {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
+          <nav className="hidden lg:flex items-center gap-8 font-medium">
 
             <a
               href="#hero"
-              className="transition hover:text-lime-400"
+              className={`transition ${
+                scrolled
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
+              }`}
             >
               Home
             </a>
 
             <a
               href="#about"
-              className="transition hover:text-lime-400"
+              className={`transition ${
+                scrolled
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
+              }`}
             >
               About
             </a>
 
             <a
+              href="#services"
+              className={`transition ${
+                scrolled
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
+              }`}
+            >
+              Services
+            </a>
+
+            <a
               href="#experience"
-              className="transition hover:text-lime-400"
+              className={`transition ${
+                scrolled
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
+              }`}
             >
               Experience
             </a>
 
             <a
               href="#prices"
-              className="transition hover:text-lime-400"
+              className={`transition ${
+                scrolled
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
+              }`}
             >
               Pricing
             </a>
 
             <a
               href="#gallery"
-              className="transition hover:text-lime-400"
+              className={`transition ${
+                scrolled
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
+              }`}
             >
               Gallery
             </a>
 
             <a
               href="#contact"
-              className="transition hover:text-lime-400"
+              className={`transition ${
+                scrolled
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
+              }`}
             >
               Contact
             </a>
@@ -101,7 +141,7 @@ export default function Navbar() {
             {/* Desktop Book Button */}
             <a
               href="#booking"
-              className="hidden lg:flex items-center justify-center bg-lime-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-lime-300 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-lime-400/30"
+              className="hidden lg:flex items-center justify-center bg-lime-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-lime-300 hover:scale-105 transition-all duration-300"
             >
               Book Now
             </a>
@@ -109,7 +149,9 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden text-white text-3xl transition"
+              className={`lg:hidden text-3xl transition ${
+                scrolled ? "text-slate-900" : "text-white"
+              }`}
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -120,31 +162,45 @@ export default function Navbar() {
       </header>
             {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-screen w-80 max-w-[85%] bg-slate-900 shadow-2xl z-[60] transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-screen w-80 max-w-[85%] bg-white shadow-2xl z-[60] transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-6 border-b border-slate-700">
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b border-gray-200">
 
-          <h2 className="text-white text-xl font-bold">
-            MENU
-          </h2>
+          <div className="flex items-center gap-3">
+
+            <Image
+              src="/images/logo.jpg"
+              alt="Levels On Ice"
+              width={42}
+              height={42}
+              className="rounded-full"
+            />
+
+            <span className="font-bold text-slate-900 tracking-wide">
+              LEVELS ON ICE
+            </span>
+
+          </div>
 
           <button
             onClick={() => setMenuOpen(false)}
-            className="text-white text-3xl hover:text-lime-400 transition"
+            className="text-slate-900 text-3xl hover:text-lime-500 transition"
           >
             <FaTimes />
           </button>
 
         </div>
 
-        <nav className="flex flex-col p-8 space-y-6 text-lg">
+        {/* Links */}
+        <nav className="flex flex-col px-8 py-8">
 
           <a
             href="#hero"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
           >
             Home
           </a>
@@ -152,7 +208,7 @@ export default function Navbar() {
           <a
             href="#about"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
           >
             About
           </a>
@@ -160,7 +216,7 @@ export default function Navbar() {
           <a
             href="#services"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
           >
             Services
           </a>
@@ -168,7 +224,7 @@ export default function Navbar() {
           <a
             href="#experience"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
           >
             Experience
           </a>
@@ -176,7 +232,7 @@ export default function Navbar() {
           <a
             href="#prices"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
           >
             Pricing
           </a>
@@ -184,7 +240,7 @@ export default function Navbar() {
           <a
             href="#gallery"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
           >
             Gallery
           </a>
@@ -192,7 +248,7 @@ export default function Navbar() {
           <a
             href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
           >
             Book Appointment
           </a>
@@ -200,29 +256,32 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-lime-400 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500"
           >
             Contact
           </a>
 
+          {/* Book Now Button */}
           <a
             href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="mt-8 bg-lime-400 text-black font-bold py-4 rounded-full text-center hover:bg-lime-300 transition"
+            className="mt-8 bg-lime-400 text-black font-bold text-center py-4 rounded-full hover:bg-lime-300 transition"
           >
             Book Now
           </a>
 
         </nav>
+
       </div>
 
-      {/* Dark Overlay */}
+      {/* Overlay */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 bg-black/60 z-50 lg:hidden"
+          className="fixed inset-0 bg-black/40 z-50 lg:hidden"
         />
       )}
-          </>
+
+    </>
   );
 }
