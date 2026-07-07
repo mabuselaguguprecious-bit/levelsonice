@@ -26,7 +26,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl shadow-lg"
+            ? "bg-white/95 backdrop-blur-lg shadow-lg"
             : "bg-transparent"
         }`}
       >
@@ -46,19 +46,22 @@ export default function Navbar() {
             />
 
             <span
-              className={`hidden sm:block text-xl lg:text-2xl font-bold tracking-widest transition ${
-                scrolled ? "text-slate-900" : "text-white"
+              className={`hidden sm:block text-2xl font-bold tracking-widest transition ${
+                scrolled
+                  ? "text-slate-900"
+                  : "text-white"
               }`}
             >
               LEVELS ON ICE
             </span>
+
           </a>
                     {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 font-medium">
+          <nav className="hidden lg:flex items-center gap-8">
 
             <a
               href="#hero"
-              className={`transition ${
+              className={`font-medium transition ${
                 scrolled
                   ? "text-slate-800 hover:text-lime-500"
                   : "text-white hover:text-lime-400"
@@ -69,7 +72,7 @@ export default function Navbar() {
 
             <a
               href="#about"
-              className={`transition ${
+              className={`font-medium transition ${
                 scrolled
                   ? "text-slate-800 hover:text-lime-500"
                   : "text-white hover:text-lime-400"
@@ -80,7 +83,7 @@ export default function Navbar() {
 
             <a
               href="#services"
-              className={`transition ${
+              className={`font-medium transition ${
                 scrolled
                   ? "text-slate-800 hover:text-lime-500"
                   : "text-white hover:text-lime-400"
@@ -91,7 +94,7 @@ export default function Navbar() {
 
             <a
               href="#experience"
-              className={`transition ${
+              className={`font-medium transition ${
                 scrolled
                   ? "text-slate-800 hover:text-lime-500"
                   : "text-white hover:text-lime-400"
@@ -102,7 +105,7 @@ export default function Navbar() {
 
             <a
               href="#prices"
-              className={`transition ${
+              className={`font-medium transition ${
                 scrolled
                   ? "text-slate-800 hover:text-lime-500"
                   : "text-white hover:text-lime-400"
@@ -113,7 +116,7 @@ export default function Navbar() {
 
             <a
               href="#gallery"
-              className={`transition ${
+              className={`font-medium transition ${
                 scrolled
                   ? "text-slate-800 hover:text-lime-500"
                   : "text-white hover:text-lime-400"
@@ -124,7 +127,7 @@ export default function Navbar() {
 
             <a
               href="#contact"
-              className={`transition ${
+              className={`font-medium transition ${
                 scrolled
                   ? "text-slate-800 hover:text-lime-500"
                   : "text-white hover:text-lime-400"
@@ -141,16 +144,18 @@ export default function Navbar() {
             {/* Desktop Book Button */}
             <a
               href="#booking"
-              className="hidden lg:flex items-center justify-center bg-lime-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-lime-300 hover:scale-105 transition-all duration-300"
+              className="hidden lg:flex items-center justify-center bg-lime-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-lime-300 hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Book Now
             </a>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className={`lg:hidden text-3xl transition ${
-                scrolled ? "text-slate-900" : "text-white"
+                scrolled
+                  ? "text-slate-900"
+                  : "text-white"
               }`}
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
@@ -166,7 +171,7 @@ export default function Navbar() {
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Header */}
+        {/* Menu Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
 
           <div className="flex items-center gap-3">
@@ -187,20 +192,20 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(false)}
-            className="text-slate-900 text-3xl hover:text-lime-500 transition"
+            className="text-3xl text-slate-900 hover:text-lime-500 transition"
           >
             <FaTimes />
           </button>
 
         </div>
 
-        {/* Links */}
-        <nav className="flex flex-col px-8 py-8">
+        {/* Navigation */}
+        <nav className="flex flex-col px-8 py-6">
 
           <a
             href="#hero"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Home
           </a>
@@ -208,7 +213,7 @@ export default function Navbar() {
           <a
             href="#about"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             About
           </a>
@@ -216,7 +221,7 @@ export default function Navbar() {
           <a
             href="#services"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Services
           </a>
@@ -224,7 +229,7 @@ export default function Navbar() {
           <a
             href="#experience"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Experience
           </a>
@@ -232,7 +237,7 @@ export default function Navbar() {
           <a
             href="#prices"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Pricing
           </a>
@@ -240,7 +245,7 @@ export default function Navbar() {
           <a
             href="#gallery"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Gallery
           </a>
@@ -248,7 +253,7 @@ export default function Navbar() {
           <a
             href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 border-b border-gray-100"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Book Appointment
           </a>
@@ -256,16 +261,16 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 transition"
           >
             Contact
           </a>
 
-          {/* Book Now Button */}
+          {/* Book Button */}
           <a
             href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="mt-8 bg-lime-400 text-black font-bold text-center py-4 rounded-full hover:bg-lime-300 transition"
+            className="mt-8 bg-lime-400 text-black text-center font-bold py-4 rounded-full hover:bg-lime-300 transition"
           >
             Book Now
           </a>
@@ -273,8 +278,7 @@ export default function Navbar() {
         </nav>
 
       </div>
-
-      {/* Overlay */}
+            {/* Overlay */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
