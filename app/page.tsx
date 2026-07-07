@@ -19,35 +19,20 @@ export default function Home() {
   return (
     <>
       <Navbar />
-
       <Hero />
-
       <About />
-
       <WhyChoose />
-
       <Services />
-
       <Experience />
-
       <HairGallery />
-
       <NailsGallery />
-
       <Pricing />
-
       <Booking />
-
       <FAQ />
-
       <Contact />
-
       <SocialSection />
-
       <Footer />
-
       <Whatsapp />
-
       <BackToTop />
     </>
   );

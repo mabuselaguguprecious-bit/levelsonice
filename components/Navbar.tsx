@@ -12,13 +12,12 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 overflow-x-hidden ${
         scrolled
           ? "bg-black/90 backdrop-blur-md shadow-lg"
           : "bg-transparent"
@@ -28,7 +27,6 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-3">
-
           <Image
             src="/images/logo.jpg"
             alt="Levels On Ice"
@@ -36,40 +34,19 @@ export default function Navbar() {
             height={50}
             className="rounded-full"
           />
-
           <h1 className="hidden sm:block text-xl lg:text-2xl font-bold tracking-wider text-white">
             LEVELS ON ICE
           </h1>
-
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
-
-          <a href="#hero" className="hover:text-lime-400 transition">
-            Home
-          </a>
-
-          <a href="#about" className="hover:text-lime-400 transition">
-            About
-          </a>
-
-          <a href="#experience" className="hover:text-lime-400 transition">
-            Experience
-          </a>
-
-          <a href="#prices" className="hover:text-lime-400 transition">
-            Pricing
-          </a>
-
-          <a href="#gallery" className="hover:text-lime-400 transition">
-            Gallery
-          </a>
-
-          <a href="#contact" className="hover:text-lime-400 transition">
-            Contact
-          </a>
-
+          <a href="#hero" className="hover:text-lime-400 transition">Home</a>
+          <a href="#about" className="hover:text-lime-400 transition">About</a>
+          <a href="#experience" className="hover:text-lime-400 transition">Experience</a>
+          <a href="#prices" className="hover:text-lime-400 transition">Pricing</a>
+          <a href="#gallery" className="hover:text-lime-400 transition">Gallery</a>
+          <a href="#contact" className="hover:text-lime-400 transition">Contact</a>
         </nav>
 
         {/* Book Button */}

@@ -9,7 +9,6 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-x-hidden w-full"
     >
-      {/* Background Image */}
       <Image
         src="/images/HF.jpg"
         fill
@@ -18,36 +17,30 @@ export default function Hero() {
         className="object-cover object-[center_30%]"
       />
 
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="relative z-20 w-full max-w-5xl px-6 text-center mx-auto"
       >
-        {/* Subtitle */}
         <p className="mt-20 md:mt-10 uppercase tracking-[4px] md:tracking-[8px] text-lime-400 text-sm md:text-lg">
           Luxury Hair • Nails • Beauty
         </p>
 
-        {/* Heading */}
         <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none text-white">
           LEVELS
           <br />
           ON ICE
         </h1>
 
-        {/* Description */}
         <p className="mt-8 mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-gray-300 leading-8">
           Experience premium hair, nails and beauty services in Mowbray.
           From intricate braids to flawless nail artistry, our team is
           dedicated to helping you look and feel your absolute best.
         </p>
 
-        {/* Buttons */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
             href="#booking"

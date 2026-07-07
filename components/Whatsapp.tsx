@@ -10,12 +10,13 @@ export default function Whatsapp() {
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
       title="Chat with us on WhatsApp"
-      className="fixed bottom-6 right-5 z-50 group"
+      className="fixed bottom-6 right-4 sm:right-5 z-50 group"
     >
       <div
         className="
           flex items-center justify-center
-          w-16 h-16
+          w-14 h-14
+          sm:w-16 sm:h-16
           md:w-[68px] md:h-[68px]
           rounded-full
           bg-[#25D366]
@@ -28,17 +29,17 @@ export default function Whatsapp() {
           hover:shadow-[0_0_35px_rgba(37,211,102,0.45)]
         "
       >
-        <FaWhatsapp className="text-[34px]" />
+        <FaWhatsapp className="text-[28px] sm:text-[34px]" />
       </div>
 
       {/* Tooltip */}
       <span
         className="
-          absolute right-20 top-1/2 -translate-y-1/2
+          absolute right-16 sm:right-20 top-1/2 -translate-y-1/2
           whitespace-nowrap
           bg-black text-white
-          text-sm
-          px-3 py-2
+          text-xs sm:text-sm
+          px-2 py-1.5 sm:px-3 sm:py-2
           rounded-lg
           opacity-0
           group-hover:opacity-100

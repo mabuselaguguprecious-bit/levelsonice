@@ -11,14 +11,14 @@ import { SiTiktok } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50/90 border-t border-gray-200/60 pt-14 pb-8">
-      <div className="max-w-7xl mx-auto px-8">
+    <footer className="bg-gray-50/90 border-t border-gray-200/60 pt-10 md:pt-14 pb-6 md:pb-8 overflow-x-hidden w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* --- MAIN GRID: Increased gap for clear spacing --- */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 pb-12">
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 pb-10 md:pb-12">
 
           {/* Column 1: Brand */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="sm:col-span-2 md:col-span-1">
             <Image
               src="/images/logo.jpg"
               alt="Levels On Ice"
@@ -36,10 +36,10 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-5">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-4 md:mb-5">
               Quick Links
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2.5 md:space-y-3 text-sm">
               <li>
                 <a
                   href="#about"
@@ -77,10 +77,10 @@ export default function Footer() {
 
           {/* Column 3: Get In Touch */}
           <div>
-            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-5">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-4 md:mb-5">
               Get In Touch
             </h3>
-            <ul className="space-y-3.5 text-sm">
+            <ul className="space-y-3 md:space-y-3.5 text-sm">
               <li className="flex items-center gap-3">
                 <FaPhoneAlt className="text-lime-500 text-xs w-4 shrink-0" />
                 <a
@@ -114,12 +114,11 @@ export default function Footer() {
 
           {/* Column 4: Connect */}
           <div>
-            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-5">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-4 md:mb-5">
               Connect With Us
             </h3>
 
-            <div className="flex items-center gap-5 text-2xl text-gray-600 mb-6">
-
+            <div className="flex items-center gap-4 md:gap-5 text-2xl text-gray-600 mb-5 md:mb-6">
               <a
                 href="#"
                 className="hover:text-lime-600 transition-colors"
@@ -144,14 +143,13 @@ export default function Footer() {
               >
                 <SiTiktok />
               </a>
-
             </div>
 
             <a
               href="https://wa.me/27813906634"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 text-sm font-semibold text-lime-700 bg-lime-50 border border-lime-300 hover:bg-lime-100 hover:border-lime-400 px-5 py-3 rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-2.5 text-sm font-semibold text-lime-700 bg-lime-50 border border-lime-300 hover:bg-lime-100 hover:border-lime-400 px-4 md:px-5 py-2.5 md:py-3 rounded-full transition-all duration-200"
             >
               <FaWhatsapp className="text-base" />
               Chat on WhatsApp
@@ -160,12 +158,12 @@ export default function Footer() {
 
         </div>
 
-        {/* --- BOTTOM BAR --- */}
-        <hr className="border-gray-200/80 my-6" />
+        {/* BOTTOM BAR */}
+        <hr className="border-gray-200/80 my-5 md:my-6" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs text-gray-500">
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 justify-center">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 justify-center text-center md:text-left">
             <p>© 2026 Levels On Ice. All rights reserved.</p>
             <span className="hidden md:inline text-gray-300">|</span>
             <a href="#" className="hover:text-gray-800 transition-colors">
@@ -185,7 +183,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4 text-center md:text-left">
             <span className="text-gray-500">South Africa</span>
             <span className="text-gray-300">|</span>
             <span className="text-gray-500">

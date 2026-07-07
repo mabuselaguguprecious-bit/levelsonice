@@ -12,14 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ FIXED: Added proper metadata with viewport
 export const metadata: Metadata = {
   title: "Levels On Ice – Premium Hair, Nails & Beauty Salon",
   description:
     "Experience premium hair, nails and beauty services in Mowbray. From intricate braids to flawless nail artistry, book your appointment today.",
 };
 
-// ✅ ADDED: Viewport configuration for mobile
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,

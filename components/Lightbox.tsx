@@ -12,58 +12,42 @@ export default function Lightbox({
   image,
   onClose,
 }: LightboxProps) {
-
   useEffect(() => {
-
     const handleKey = (e: KeyboardEvent) => {
-
       if (e.key === "Escape") {
-
         onClose();
-
       }
-
     };
-
     window.addEventListener("keydown", handleKey);
-
     return () => window.removeEventListener("keydown", handleKey);
-
   }, [onClose]);
 
   if (!image) return null;
 
   return (
-
     <div
       onClick={onClose}
-      className="fixed inset-0 z-[999] bg-black/90 backdrop-blur-lg flex items-center justify-center p-8"
+      className="fixed inset-0 z-[999] bg-black/90 backdrop-blur-lg flex items-center justify-center p-4 sm:p-8"
     >
-
       <button
         onClick={onClose}
-        className="absolute top-8 right-8 text-white text-5xl hover:text-lime-400 transition"
+        className="absolute top-4 right-4 sm:top-8 sm:right-8 text-white text-3xl sm:text-4xl md:text-5xl hover:text-lime-400 transition z-10"
       >
         ×
       </button>
 
       <div
-        onClick={(e)=>e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
         className="relative max-w-6xl w-full"
       >
-
         <Image
           src={image}
           alt=""
           width={1800}
           height={1800}
-          className="rounded-3xl object-contain max-h-[90vh] w-full"
+          className="rounded-2xl sm:rounded-3xl object-contain max-h-[80vh] sm:max-h-[90vh] w-full"
         />
-
       </div>
-
     </div>
-
   );
-
 }
