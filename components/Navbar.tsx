@@ -26,7 +26,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-lg shadow-lg"
+            ? "bg-white backdrop-blur-lg shadow-lg"
             : "bg-transparent"
         }`}
       >
@@ -48,7 +48,7 @@ export default function Navbar() {
             <span
               className={`hidden sm:block text-2xl font-bold tracking-widest transition ${
                 scrolled
-                  ? "text-black"
+                  ? "text-slate-900"
                   : "text-white"
               }`}
             >
@@ -56,16 +56,15 @@ export default function Navbar() {
             </span>
 
           </a>
-
-          {/* Desktop Navigation */}
+                    {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
 
             <a
               href="#hero"
-              className={`text-base font-semibold transition ${
+              className={`font-medium transition ${
                 scrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
               }`}
             >
               Home
@@ -73,10 +72,10 @@ export default function Navbar() {
 
             <a
               href="#about"
-              className={`text-base font-semibold transition ${
+              className={`font-medium transition ${
                 scrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
               }`}
             >
               About
@@ -84,10 +83,10 @@ export default function Navbar() {
 
             <a
               href="#services"
-              className={`text-base font-semibold transition ${
+              className={`font-medium transition ${
                 scrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
               }`}
             >
               Services
@@ -95,10 +94,10 @@ export default function Navbar() {
 
             <a
               href="#experience"
-              className={`text-base font-semibold transition ${
+              className={`font-medium transition ${
                 scrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
               }`}
             >
               Experience
@@ -106,10 +105,10 @@ export default function Navbar() {
 
             <a
               href="#prices"
-              className={`text-base font-semibold transition ${
+              className={`font-medium transition ${
                 scrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
               }`}
             >
               Pricing
@@ -117,10 +116,10 @@ export default function Navbar() {
 
             <a
               href="#gallery"
-              className={`text-base font-semibold transition ${
+              className={`font-medium transition ${
                 scrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
               }`}
             >
               Gallery
@@ -128,10 +127,10 @@ export default function Navbar() {
 
             <a
               href="#contact"
-              className={`text-base font-semibold transition ${
+              className={`font-medium transition ${
                 scrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
+                  ? "text-slate-800 hover:text-lime-500"
+                  : "text-white hover:text-lime-400"
               }`}
             >
               Contact
@@ -145,7 +144,7 @@ export default function Navbar() {
             {/* Desktop Book Button */}
             <a
               href="#booking"
-              className="hidden lg:flex items-center justify-center bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 hover:scale-105 transition-all duration-300 shadow-lg"
+              className="hidden lg:flex items-center justify-center bg-lime-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-lime-300 hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Book Now
             </a>
@@ -155,7 +154,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(!menuOpen)}
               className={`lg:hidden text-3xl transition ${
                 scrolled
-                  ? "text-black"
+                  ? "text-slate-900"
                   : "text-white"
               }`}
             >
@@ -166,8 +165,7 @@ export default function Navbar() {
 
         </div>
       </header>
-
-      {/* Mobile Menu */}
+            {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-screen w-80 max-w-[85%] bg-white shadow-2xl z-[60] transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
@@ -186,7 +184,7 @@ export default function Navbar() {
               className="rounded-full"
             />
 
-            <span className="font-bold text-black tracking-wide">
+            <span className="font-bold text-slate-900 tracking-wide">
               LEVELS ON ICE
             </span>
 
@@ -194,7 +192,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(false)}
-            className="text-3xl text-black hover:text-gray-600 transition"
+            className="text-3xl text-slate-900 hover:text-lime-500 transition"
           >
             <FaTimes />
           </button>
@@ -207,7 +205,7 @@ export default function Navbar() {
           <a
             href="#hero"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black border-b border-gray-100 hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Home
           </a>
@@ -215,7 +213,7 @@ export default function Navbar() {
           <a
             href="#about"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black border-b border-gray-100 hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             About
           </a>
@@ -223,7 +221,7 @@ export default function Navbar() {
           <a
             href="#services"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black border-b border-gray-100 hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Services
           </a>
@@ -231,7 +229,7 @@ export default function Navbar() {
           <a
             href="#experience"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black border-b border-gray-100 hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Experience
           </a>
@@ -239,7 +237,7 @@ export default function Navbar() {
           <a
             href="#prices"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black border-b border-gray-100 hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Pricing
           </a>
@@ -247,7 +245,7 @@ export default function Navbar() {
           <a
             href="#gallery"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black border-b border-gray-100 hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Gallery
           </a>
@@ -255,7 +253,7 @@ export default function Navbar() {
           <a
             href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black border-b border-gray-100 hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
           >
             Book Appointment
           </a>
@@ -263,7 +261,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-semibold text-black hover:text-gray-600 transition"
+            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 transition"
           >
             Contact
           </a>
@@ -272,7 +270,7 @@ export default function Navbar() {
           <a
             href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="mt-8 bg-black text-white text-center font-bold py-4 rounded-full hover:bg-gray-800 transition"
+            className="mt-8 bg-lime-400 text-black text-center font-bold py-4 rounded-full hover:bg-lime-300 transition"
           >
             Book Now
           </a>
@@ -280,12 +278,11 @@ export default function Navbar() {
         </nav>
 
       </div>
-
-      {/* Overlay */}
+            {/* Overlay */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 bg-white/80 z-50 lg:hidden"
+          className="fixed inset-0 bg-white z-50 lg:hidden"
         />
       )}
 
