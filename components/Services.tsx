@@ -8,60 +8,70 @@ import {
 const services = [
   {
     title: "Braiding",
-    icon: <FaCut size={38} />,
-    text: "Professional braids for every style."
+    icon: <FaCut size={42} />,
+    text: "Professional braids for every style.",
   },
   {
     title: "Hair Styling",
-    icon: <FaMagic size={38} />,
-    text: "Beautiful hairstyles for every occasion."
+    icon: <FaMagic size={42} />,
+    text: "Beautiful hairstyles for every occasion.",
   },
   {
     title: "Nails",
-    icon: <FaPaintBrush size={38} />,
-    text: "Gel, acrylic and nail art services."
+    icon: <FaPaintBrush size={42} />,
+    text: "Gel, acrylic and nail art services.",
   },
   {
     title: "Beauty",
-    icon: <FaSpa size={38} />,
-    text: "Beauty treatments to complete your look."
-  }
+    icon: <FaSpa size={42} />,
+    text: "Beauty treatments to complete your look.",
+  },
 ];
 
 export default function Services() {
   return (
     <section
       id="services"
-      className="bg-slate-100 py-16 md:py-24 overflow-x-hidden w-full"
+      className="bg-slate-100 py-16 sm:py-20 lg:py-24"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-12 md:mb-20">
-          <p className="text-lime-500 uppercase font-semibold tracking-[4px] md:tracking-[5px] text-xs md:text-sm">
+        {/* Heading */}
+        <div className="text-center mb-12 lg:mb-16">
+
+          <p className="uppercase tracking-[6px] text-lime-500 font-semibold text-sm">
             OUR SERVICES
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-3">
+
+          <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-slate-900">
             What We Offer
           </h2>
+
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-slate-50 rounded-2xl md:rounded-3xl p-6 md:p-10 shadow hover:shadow-xl transition"
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="text-lime-500 mb-4 md:mb-6">
+              <div className="text-lime-500 mb-6">
                 {service.icon}
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 md:mb-4">
+
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-sm md:text-base">
+
+              <p className="text-gray-600 leading-7">
                 {service.text}
               </p>
+
             </div>
           ))}
+
         </div>
 
       </div>
