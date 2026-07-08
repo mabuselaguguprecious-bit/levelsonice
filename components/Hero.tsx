@@ -8,7 +8,7 @@ export default function Hero() {
     >
       {/* Background Image */}
       <Image
-        src="/images/H3.jpeg"
+        src="/images/About5.jpeg"
         alt="Levels On Ice Salon"
         fill
         priority
@@ -16,7 +16,7 @@ export default function Hero() {
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">

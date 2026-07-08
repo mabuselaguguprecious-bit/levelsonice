@@ -143,7 +143,7 @@ export default function Experience() {
         {/* Bottom Row */}
         <div className="mt-20 grid lg:grid-cols-2 gap-10">
                     {/* ================= Wi-Fi Card ================= */}
-          <div className="bg-white rounded-[32px] overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 group">
+          <div className="bg-white rounded-[9px] overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 group">
 
             <div className="relative h-72 overflow-hidden">
 
@@ -180,7 +180,7 @@ export default function Experience() {
 
           </div>
                     {/* ================= WHY CHOOSE US ================= */}
-          <div className="bg-white rounded-[32px] border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 p-10 flex flex-col justify-between">
+          <div className="bg-white rounded-[9px] border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 p-10 pb-24 flex flex-col justify-between">
 
             <div>
 
@@ -194,13 +194,13 @@ export default function Experience() {
                 Great Service
               </h3>
 
-              <p className="mt-6 text-gray-600 text-lg leading-8">
+              <p className="mt-5 text-gray-600 text-lg leading-7">
                 We go beyond great hairstyles. Every client enjoys a welcoming
                 environment, professional service and thoughtful extras that
                 make every appointment memorable.
               </p>
 
-              <div className="mt-10 space-y-7">
+              <div className="mt-20 grid lg:grid-cols-2 gap-10">
 
                 {[
                   {

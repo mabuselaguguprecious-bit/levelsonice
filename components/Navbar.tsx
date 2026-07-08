@@ -31,12 +31,18 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <header
-      
-  className="fixed top-0 left-0 w-full z-50 bg-[#F3F5F7]/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
+      {/* Navbar */}
+<header
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+    scrolled
+      ? "bg-[#F3F5F7]/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
+      : "bg-transparent"
+  }`}
 >
+  <div className="max-w-7xl mx-auto h-18 pl-122 pr-18 flex items-center justify-between">
       
-        <div className="max-w-7xl mx-auto h-18 pl-122 pr-18 flex items-center justify-between">
+      
+        
 
           {/* Logo */}
           <Link
@@ -52,30 +58,31 @@ export default function Navbar() {
               priority
             />
 
-            <span
-              className="hidden sm:block text-3xl font-bold tracking-[4px] transition-colors duration-300 ${
-              "
-            >
-              LEVELS ON ICE
-            </span>
+           <span
+  className={`hidden sm:block text-3xl font-bold tracking-[4px] transition-colors duration-300 ${
+    scrolled ? "text-slate-900" : "text-white"
+  }`}
+>
+  LEVELS ON ICE
+</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-12">
-
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-[15px] font-normal tracking-wide transition-all duration-300 ${
-                  "
-              >
-                {link.name}
-              </Link>
-            ))}
-
-          </nav>
-
+  {navLinks.map((link) => (
+    <Link
+      key={link.name}
+      href={link.href}
+      className={`text-[15px] font-medium tracking-wide transition-all duration-300 ${
+  scrolled
+    ? "!text-slate-800 hover:!text-lime-500"
+    : "!text-white hover:!text-lime-300"
+}`}
+    >
+      {link.name}
+    </Link>
+  ))}
+</nav>
           {/* Right Side */}
           <div className="flex items-center gap-5">
 
@@ -103,8 +110,9 @@ export default function Navbar() {
             {/* Mobile Menu */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden text-3xl transition-colors duration-300 ${
-                "
+              className={`lg:hidden text-3xl transition-colors duration-300 ${
+  scrolled ? "text-slate-800" : "text-white"
+}`}
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -130,41 +138,33 @@ export default function Navbar() {
             : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between h-24 px-6 border-b">
+        <div className="flex bg-[#F3F5F7]/90 items-center justify-between h-9 px-6 border-gray">
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1">
 
-            <Image
-              src="/images/logo.jpg"
-              alt="Levels On Ice"
-              width={42}
-              height={42}
-              className="rounded-full"
-            />
+            
 
-            <span className="font-bold tracking-wide text-slate-900">
-              LEVELS ON ICE
-            </span>
+           
 
           </div>
 
           <button
             onClick={() => setMenuOpen(false)}
-            className="text-3xl text-slate-800"
+            className="text-3xl bg-[#F3F5F7]/90 text-slate-800"
           >
             <FaTimes />
           </button>
 
         </div>
 
-        <nav className="flex flex-col px-8 py-6">
+        <nav className="flex flex-col px-8 py-1">
 
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="py-4 text-lg text-slate-700 border-b border-gray-100 hover:text-lime-500 transition"
+              className="py-4 bg-[#F3F5F7]/90 text-lg text-slate-700 border-b border-gray-100 hover:text-lime-500 transition"
             >
               {link.name}
             </Link>
