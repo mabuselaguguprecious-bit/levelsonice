@@ -10,7 +10,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-x-hidden w-full"
     >
       <Image
-        src="/images/HF.jpg"
+        src="/images/HF1.PNG"
         fill
         priority
         alt="Levels On Ice"
