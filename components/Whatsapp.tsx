@@ -10,7 +10,7 @@ export default function Whatsapp() {
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
       title="Chat with us on WhatsApp"
-      className="fixed bottom-24 right-1 sm:right-10 z-50 group"
+      className="fixed bottom-23 right-1 sm:right-5 z-45 group"
     >
       <div
         className="
