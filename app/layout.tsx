@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#84cc16",
 };
 
 export default function RootLayout({
@@ -17,12 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-white text-slate-900 antialiased">
+        {children}
+      </body>
     </html>
   );
 }

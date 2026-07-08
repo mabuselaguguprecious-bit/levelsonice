@@ -39,6 +39,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-4 md:mb-5">
               Quick Links
             </h3>
+            <div className = "h-1" />
             <ul className="space-y-2.5 md:space-y-3 text-sm">
               <li>
                 <a
@@ -80,6 +81,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-4 md:mb-5">
               Get In Touch
             </h3>
+            <div className = "h-1" />
             <ul className="space-y-3 md:space-y-3.5 text-sm">
               <li className="flex items-center gap-3">
                 <FaPhoneAlt className="text-lime-500 text-xs w-4 shrink-0" />
@@ -117,7 +119,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-[1px] mb-4 md:mb-5">
               Connect With Us
             </h3>
-
+<div className = "h-2" />
             <div className="flex items-center gap-4 md:gap-5 text-2xl text-gray-600 mb-5 md:mb-6">
               <a
                 href="#"
@@ -144,7 +146,7 @@ export default function Footer() {
                 <SiTiktok />
               </a>
             </div>
-
+<div className = "h-2.5" />
             <a
               href="https://wa.me/27813906634"
               target="_blank"

@@ -41,16 +41,20 @@ export default function Pricing() {
           <p className="uppercase tracking-[4px] md:tracking-[6px] text-lime-500 font-semibold text-xs md:text-sm">
             OUR PRICES
           </p>
+          <div className = "h-3" /> 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mt-3 md:mt-5 leading-tight">
             Beauty Services
           </h2>
+          <div className = "h-3" /> 
           <div className="flex justify-center mt-4 md:mt-6">
             <span className="w-16 md:w-20 h-1.5 rounded-full bg-gradient-to-r from-lime-400 to-emerald-400" />
           </div>
+          <div className = "h-3" /> 
           <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-6 md:mt-8 leading-7 md:leading-8 px-4">
             Transparent pricing with no hidden costs. Professional beauty
             services delivered by experienced stylists.
           </p>
+          <div className = "h-3" /> 
 
           {/* Business hours */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-6 md:mt-8 text-xs md:text-sm">
@@ -64,6 +68,7 @@ export default function Pricing() {
             </span>
           </div>
         </div>
+        <div className = "h-4" /> 
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -193,18 +198,8 @@ export default function Pricing() {
 
         </div>
 
-        {/* Back to Top */}
-        <div className="flex justify-center mt-12 md:mt-16">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-lime-500 transition-colors text-xs md:text-sm font-medium"
-          >
-            <FaArrowUp className="text-xs" />
-            Back to top
-          </a>
-        </div>
-
       </div>
     </section>
   );
 }
+  

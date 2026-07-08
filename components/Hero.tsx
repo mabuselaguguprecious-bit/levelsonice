@@ -1,62 +1,62 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-x-hidden w-full"
+      className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden"
     >
+      {/* Background Image */}
       <Image
-        src="/images/HF1.PNG"
+        src="/images/H3.jpeg"
+        alt="Levels On Ice Salon"
         fill
         priority
-        alt="Levels On Ice"
-        className="object-cover object-[center_30%]"
+        className="object-cover object-center"
       />
 
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/65" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="relative z-20 w-full max-w-5xl px-6 text-center mx-auto"
-      >
-        <p className="mt-20 md:mt-10 uppercase tracking-[4px] md:tracking-[8px] text-lime-400 text-sm md:text-lg">
-          Luxury Hair • Nails • Beauty
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
+        <p className="uppercase tracking-[8px] text-lime-400 font-semibold text-sm md:text-base">
+          Hair • Nails • Beauty
         </p>
 
-        <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none text-white">
+        <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-tight">
           LEVELS
           <br />
           ON ICE
         </h1>
 
-        <p className="mt-8 mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-gray-300 leading-8">
-          Experience premium hair, nails and beauty services in Mowbray.
-          From intricate braids to flawless nail artistry, our team is
-          dedicated to helping you look and feel your absolute best.
+        <p className="mt-10 max-w-3xl mx-auto text-gray-200 text-lg md:text-xl leading-9">
+          Professional hair, braiding, nails and beauty services in
+          Mowbray. We create styles that help you look and feel your best.
         </p>
 
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
+        {/* 👇 Spacer – adjust this height as needed */}
+        <div className="h-12" />
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
           <a
             href="#booking"
-            className="w-full sm:w-auto max-w-xs inline-flex items-center justify-center px-8 py-4 rounded-full bg-lime-400 text-black font-bold text-lg md:text-xl hover:bg-lime-300 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-lime-400/40"
+            className="inline-flex items-center justify-center min-w-[220px] h-13 px-8 rounded-full bg-lime-400 text-black text-2.2xl font-bold hover:bg-lime-300 transition-all duration-300 hover:scale-105"
           >
             Book Appointment
           </a>
-
           <a
             href="#gallery"
-            className="w-full sm:w-auto max-w-xs inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-lg md:text-xl hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center justify-center min-w-[200px] h-13 px-10 rounded-full border-2 border-white !text-white text-xl font-semibold whitespace-nowrap hover:bg-white hover:!text-black transition-all duration-300"
           >
             View Gallery
           </a>
         </div>
-      </motion.div>
+      </div>
+
+     
+      
     </section>
   );
 }

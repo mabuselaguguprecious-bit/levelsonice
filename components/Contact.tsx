@@ -24,23 +24,23 @@ export default function ContactBest() {
             <p className="uppercase tracking-[6px] text-lime-600 font-semibold text-sm">
               CONTACT US
             </p>
+            <div className = "h-3" /> 
             <div className="w-12 h-[2px] bg-lime-300 rounded-full" />
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
             Visit Our <span className="text-lime-600">Salon</span>
           </h2>
-
+<div className = "h-3.5" /> 
           <div className="flex justify-center mt-5">
             <div className="w-24 h-1.5 bg-gradient-to-r from-lime-400 to-lime-600 rounded-full" />
           </div>
-
+<div className = "h-6" /> 
           <p className="text-gray-500 mt-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-4">
-            We'd love to welcome you. Visit us in Mowbray or contact us
-            to book your next appointment.
+            We'd love to welcome you. Visit us in Mowbray or contact us to book your next appointment.
           </p>
         </div>
-
+<div className = "h-4" /> 
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10">
           {/* LEFT: Contact Cards */}

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -10,153 +11,100 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Experience", href: "#experience" },
+    { name: "Gallery", href: "#gallery" },
+    { name: "Pricing", href: "#prices" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
     <>
       {/* Navbar */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white backdrop-blur-lg shadow-lg"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-5 lg:px-8">
+      
+  className="fixed top-0 left-0 w-full z-50 bg-[#F3F5F7]/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
+>
+      
+        <div className="max-w-7xl mx-auto h-18 pl-122 pr-18 flex items-center justify-between">
 
           {/* Logo */}
-          <a
+          <Link
             href="#hero"
-            className="flex items-center gap-3"
+            className="justify-self-start  flex items-center gap-2"
           >
             <Image
               src="/images/logo.jpg"
               alt="Levels On Ice"
-              width={52}
-              height={52}
+              width={44}
+              height={44}
               className="rounded-full"
+              priority
             />
 
             <span
-              className={`hidden sm:block text-2xl font-bold tracking-widest transition ${
-                scrolled
-                  ? "text-slate-900"
-                  : "text-white"
-              }`}
+              className="hidden sm:block text-3xl font-bold tracking-[4px] transition-colors duration-300 ${
+              "
             >
               LEVELS ON ICE
             </span>
+          </Link>
 
-          </a>
-                    {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-12">
 
-            <a
-              href="#hero"
-              className={`font-medium transition ${
-                scrolled
-                  ? "text-slate-800 hover:text-lime-500"
-                  : "text-white hover:text-lime-400"
-              }`}
-            >
-              Home
-            </a>
-
-            <a
-              href="#about"
-              className={`font-medium transition ${
-                scrolled
-                  ? "text-slate-800 hover:text-lime-500"
-                  : "text-white hover:text-lime-400"
-              }`}
-            >
-              About
-            </a>
-
-            <a
-              href="#services"
-              className={`font-medium transition ${
-                scrolled
-                  ? "text-slate-800 hover:text-lime-500"
-                  : "text-white hover:text-lime-400"
-              }`}
-            >
-              Services
-            </a>
-
-            <a
-              href="#experience"
-              className={`font-medium transition ${
-                scrolled
-                  ? "text-slate-800 hover:text-lime-500"
-                  : "text-white hover:text-lime-400"
-              }`}
-            >
-              Experience
-            </a>
-
-            <a
-              href="#prices"
-              className={`font-medium transition ${
-                scrolled
-                  ? "text-slate-800 hover:text-lime-500"
-                  : "text-white hover:text-lime-400"
-              }`}
-            >
-              Pricing
-            </a>
-
-            <a
-              href="#gallery"
-              className={`font-medium transition ${
-                scrolled
-                  ? "text-slate-800 hover:text-lime-500"
-                  : "text-white hover:text-lime-400"
-              }`}
-            >
-              Gallery
-            </a>
-
-            <a
-              href="#contact"
-              className={`font-medium transition ${
-                scrolled
-                  ? "text-slate-800 hover:text-lime-500"
-                  : "text-white hover:text-lime-400"
-              }`}
-            >
-              Contact
-            </a>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-[15px] font-normal tracking-wide transition-all duration-300 ${
+                  "
+              >
+                {link.name}
+              </Link>
+            ))}
 
           </nav>
 
           {/* Right Side */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
 
-            {/* Desktop Book Button */}
-            <a
-              href="#booking"
-              className="hidden lg:flex items-center justify-center bg-lime-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-lime-300 hover:scale-105 transition-all duration-300 shadow-lg"
-            >
-              Book Now
-            </a>
+            <Link
+  href="#booking"
+  className="hidden lg:flex items-center justify-center
+             min-w-[100px]
+             h-7
+             px-100
+             rounded-full
+             bg-lime-400
+             text-black
+             text-base
+             font-semibold
+             tracking-wide
+             shadow-lg
+             hover:bg-lime-300
+             hover:scale-105
+             transition-all
+             duration-300"
+>
+  Book Now
+</Link>
 
-            {/* Mobile Hamburger */}
+            {/* Mobile Menu */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`lg:hidden text-3xl transition ${
-                scrolled
-                  ? "text-slate-900"
-                  : "text-white"
-              }`}
+              className="lg:hidden text-3xl transition-colors duration-300 ${
+                "
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -165,14 +113,24 @@ export default function Navbar() {
 
         </div>
       </header>
-            {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 right-0 h-screen w-80 max-w-[85%] bg-white shadow-2xl z-[60] transform transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
+
+      {/* Overlay */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu */}
+      <aside
+        className={`fixed top-0 right-0 h-screen w-80 max-w-[85%] bg-white z-50 shadow-2xl transition-transform duration-300 lg:hidden ${
+          menuOpen
+            ? "translate-x-0"
+            : "translate-x-full"
         }`}
       >
-        {/* Menu Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        <div className="flex items-center justify-between h-24 px-6 border-b">
 
           <div className="flex items-center gap-3">
 
@@ -184,7 +142,7 @@ export default function Navbar() {
               className="rounded-full"
             />
 
-            <span className="font-bold text-slate-900 tracking-wide">
+            <span className="font-bold tracking-wide text-slate-900">
               LEVELS ON ICE
             </span>
 
@@ -192,100 +150,36 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(false)}
-            className="text-3xl text-slate-900 hover:text-lime-500 transition"
+            className="text-3xl text-slate-800"
           >
             <FaTimes />
           </button>
 
         </div>
 
-        {/* Navigation */}
         <nav className="flex flex-col px-8 py-6">
 
-          <a
-            href="#hero"
-            onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
-          >
-            Home
-          </a>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="py-4 text-lg text-slate-700 border-b border-gray-100 hover:text-lime-500 transition"
+            >
+              {link.name}
+            </Link>
+          ))}
 
-          <a
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
-          >
-            About
-          </a>
-
-          <a
-            href="#services"
-            onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
-          >
-            Services
-          </a>
-
-          <a
-            href="#experience"
-            onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
-          >
-            Experience
-          </a>
-
-          <a
-            href="#prices"
-            onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
-          >
-            Pricing
-          </a>
-
-          <a
-            href="#gallery"
-            onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
-          >
-            Gallery
-          </a>
-
-          <a
+          <Link
             href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 border-b border-gray-100 hover:text-lime-500 transition"
+            className="mt-8 bg-lime-400 text-black text-center py-4 rounded-full font-semibold hover:bg-lime-300 transition"
           >
             Book Appointment
-          </a>
-
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="py-4 text-lg font-medium text-slate-800 hover:text-lime-500 transition"
-          >
-            Contact
-          </a>
-
-          {/* Book Button */}
-          <a
-            href="#booking"
-            onClick={() => setMenuOpen(false)}
-            className="mt-8 bg-lime-400 text-black text-center font-bold py-4 rounded-full hover:bg-lime-300 transition"
-          >
-            Book Now
-          </a>
+          </Link>
 
         </nav>
-
-      </div>
-            {/* Overlay */}
-      {menuOpen && (
-        <div
-          onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 bg-white z-50 lg:hidden"
-        />
-      )}
-
+      </aside>
     </>
   );
 }

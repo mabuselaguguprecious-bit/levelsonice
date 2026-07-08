@@ -12,7 +12,10 @@ export default function BackToTop() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -25,10 +28,17 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-     className={`fixed bottom-4 right-6 z-30 flex items-center gap-4 bg-white text-black px-10 py-6 rounded-2xl shadow-xl hover:bg-lime-400 transition-all duration-300`}
+      className={`fixed bottom-8 right-15 z-30 flex items-center gap-3 bg-white text-black px-6 py-4 rounded-2xl shadow-xl hover:bg-lime-400 transition-all duration-300 ${
+        showButton
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-6 pointer-events-none"
+      }`}
     >
-      <FaArrowUp className="text-base sm:text-lg" />
-      <span className="font-medium text-sm sm:text-base">Back to top</span>
+      <FaArrowUp className="text-lg" />
+
+      <span className="font-semibold text-base">
+        Back to top
+      </span>
     </button>
   );
 }
