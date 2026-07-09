@@ -138,7 +138,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://www.tiktok.com/@levelsonicesalon"
+                href="https://www.tiktok.com/@levelsonicesalon1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-lime-600 transition-colors"

@@ -10,7 +10,7 @@ const hairstyles = [
   "/images/P8.PNG",
   "/images/P14.PNG",
   "/images/P15.PNG",
-  "/images/P24.PNG",
+  "/images/p24.PNG",
   "/images/p31.PNG",
   "/images/p34.jpg",
   "/images/p36.jpg",

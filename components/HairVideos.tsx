@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const videos = [
   "/videos/jess.mp4",
@@ -10,6 +10,30 @@ const videos = [
 
 export default function HairVideos() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  // 🔽 PASTE THIS BEFORE THE "return (" LINE
+useEffect(() => {
+  videoRefs.current.forEach((video, index) => {
+    if (!video) return;
+    const handleLoadedData = () => {
+      video.currentTime = 1;
+      video.addEventListener('seeked', function onSeeked() {
+        const canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx?.drawImage(video, 0, 0, canvas.width, canvas.height);
+        video.poster = canvas.toDataURL('image/jpeg');
+        video.removeEventListener('seeked', onSeeked);
+      });
+    };
+    video.addEventListener('loadeddata', handleLoadedData);
+    return () => {
+      video.removeEventListener('loadeddata', handleLoadedData);
+    };
+  });
+}, []);
 
   return (
     <section
@@ -56,12 +80,14 @@ export default function HairVideos() {
               <div className="relative aspect-[9/16] overflow-hidden">
 
                 <video
-                  src={video}
-                  muted
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-full object-cover"
-                />
+  // 🔽 ADD THIS NEW LINE BELOW
+  ref={el => { videoRefs.current[index] = el; }}
+  src={video}
+  muted
+  playsInline
+  preload="metadata"
+  className="w-full h-full object-cover"
+/>
 
                 {/* Dark Overlay */}
 
