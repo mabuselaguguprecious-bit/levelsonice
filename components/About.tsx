@@ -106,7 +106,7 @@ export default function About() {
             <div className="relative w-[350px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition duration-500">
 
               <Image
-                src="/images/p26.PNG"
+                src="/images/About3.jpeg"
                 alt="Levels On Ice"
                 fill
                 className="object-cover"

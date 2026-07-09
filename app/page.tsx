@@ -3,6 +3,9 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Experience from "@/components/Experience";
+import HairGallery from "@/components/HairGallery";
+import HairVideos from "@/components/HairVideos";
+import NailsGallery from "@/components/NailsGallery";
 import Pricing from "@/components/Pricing";
 import Booking from "@/components/Booking";
 import Contact from "@/components/Contact";
@@ -20,7 +23,9 @@ export default function Home() {
         <About />
         <Services />
         <Experience />
-        
+        <HairGallery />
+        <HairVideos />
+        <NailsGallery />
         <Pricing />
         <Booking />
         <Contact />
