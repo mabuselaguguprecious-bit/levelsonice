@@ -1,39 +1,29 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState} from "react";
 
 const videos = [
-  "/videos/jess.mp4",
-  "/videos/jess2.mp4",
-  
+  {
+    video: "/videos/jess.mp4",
+    thumbnail: "/images/jess-thumb.PNG",
+    title: "Braiding Transformation",
+  },
+  {
+    video: "/videos/jess2.mp4",
+    thumbnail: "/images/jess2-thumb.PNG",
+    title: "Protective Style",
+  },
+  {
+    video: "/videos/latest.mp4",
+    thumbnail: "/images/LT.PNG",
+    title: "Latest Work",
+  },
 ];
-
 export default function HairVideos() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  
 
-  // 🔽 PASTE THIS BEFORE THE "return (" LINE
-useEffect(() => {
-  videoRefs.current.forEach((video, index) => {
-    if (!video) return;
-    const handleLoadedData = () => {
-      video.currentTime = 1;
-      video.addEventListener('seeked', function onSeeked() {
-        const canvas = document.createElement('canvas');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const ctx = canvas.getContext('2d');
-        ctx?.drawImage(video, 0, 0, canvas.width, canvas.height);
-        video.poster = canvas.toDataURL('image/jpeg');
-        video.removeEventListener('seeked', onSeeked);
-      });
-    };
-    video.addEventListener('loadeddata', handleLoadedData);
-    return () => {
-      video.removeEventListener('loadeddata', handleLoadedData);
-    };
-  });
-}, []);
+ 
 
   return (
     <section
@@ -69,24 +59,20 @@ useEffect(() => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                  {videos.map((video, index) => (
+                 {videos.map((video, index) => (
 
             <button
               key={index}
-              onClick={() => setSelectedVideo(video)}
+              onClick={() => setSelectedVideo(video.video)}
               className="group relative overflow-hidden rounded-[32px] bg-white shadow-md hover:shadow-2xl hover:shadow-lime-500/10 transition-all duration-500 hover:-translate-y-2"
             >
 
               <div className="relative aspect-[9/16] overflow-hidden">
 
-                <video
-  // 🔽 ADD THIS NEW LINE BELOW
-  ref={el => { videoRefs.current[index] = el; }}
-  src={video}
-  muted
-  playsInline
-  preload="metadata"
-  className="w-full h-full object-cover"
+                <img
+  src={video.thumbnail}
+  alt={video.title}
+  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
 />
 
                 {/* Dark Overlay */}
@@ -117,8 +103,8 @@ useEffect(() => {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
 
                   <p className="text-white text-xl font-bold">
-                    
-                  </p>
+  {video.title}
+</p>
 
                   <p className="text-gray-200 mt-1">
                     Click to watch

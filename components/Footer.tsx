@@ -189,9 +189,9 @@ export default function Footer() {
             <span className="text-gray-500">South Africa</span>
             <span className="text-gray-300">|</span>
             <span className="text-gray-500">
-              Designed by{" "}
+              
               <span className="text-gray-800 font-medium hover:text-lime-600 transition-colors">
-                Gugu Mabusela
+                
               </span>
             </span>
           </div>
