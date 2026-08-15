@@ -30,6 +30,8 @@ const hairServices = [
   { service: "Passion Twist", ourFiber: "R400", note: "Client supplies own fibres" },
   { service: "Butterfly Locs", ourFiber: "R450", note: "Client supplies own fibres" },
   { service: "French Curls Small", ourFiber: "R550", note: "Client supplies own fibres" },
+  { service: "Unisex Haircut", note: "Price based on customization" },
+
 
   // ========== WASH & TREATMENT ==========
   { service: "Wash", ourFiber: "R50" },
@@ -51,7 +53,7 @@ const hairServices = [
   { service: "Nail Art (per nail)", ourFiber: "R10" },
   { service: "Soak Off", ourFiber: "R50" },
   { service: "Refill", ourFiber: "R150" },
-  { service: "Unisex Haircut", note: "Price based on customization" },
+ 
 
 ];
 
