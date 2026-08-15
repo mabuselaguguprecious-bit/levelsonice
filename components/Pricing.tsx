@@ -2,59 +2,34 @@
 
 import { FaCheckCircle, FaArrowUp, FaClock, FaCalendar } from "react-icons/fa";
 
-const hairServices = [  
- const services = [
+const hairServices = [
   // ========== HAIR ==========
   { service: "Knotless Braids – Small", ourFiber: "R700", clientFiber: "R550" },
   { service: "Knotless Braids with Curls", ourFiber: "R800", clientFiber: "R600" },
-
   { service: "Box Braids", ourFiber: "R600", clientFiber: "R450" },
-
   { service: "Cornrows – Wig lines medium", ourFiber: "R100" },
   { service: "Cornrows – Wig lines small", ourFiber: "R150" },
   { service: "Cornrows – With style", ourFiber: "R150" },
-
   { service: "Normal Braids", ourFiber: "R550", clientFiber: "R400" },
   { service: "Amabhenghi", ourFiber: "R500", clientFiber: "R350" },
   { service: "Amabhenghi with Curls", ourFiber: "R600", clientFiber: "R400" },
   { service: "Straight Up", ourFiber: "R450", clientFiber: "R350" },
   { service: "Straight Back", ourFiber: "R350", clientFiber: "R250" },
   { service: "Straight Back with Curls", ourFiber: "R420", clientFiber: "R300" },
-
   { service: "Twist", ourFiber: "R700", clientFiber: "R450" },
   { service: "Twist + Curls", ourFiber: "R750", clientFiber: "R550" },
   { service: "Bob Braids", ourFiber: "R450", clientFiber: "R300" },
-
-  // ========== NAILS (as listed in image, but these are also braid styles) ==========
   { service: "Gel Phondo", ourFiber: "R400", note: "Client supplies own fibres" },
   { service: "Passion Twist", ourFiber: "R400", note: "Client supplies own fibres" },
   { service: "Butterfly Locs", ourFiber: "R450", note: "Client supplies own fibres" },
   { service: "French Curls Small", ourFiber: "R550", note: "Client supplies own fibres" },
-  { service: "Unisex Haircut", note: "Price based on customization" },
-
-
-  // ========== WASH & TREATMENT ==========
+  { service: "Unisex Haircut", ourFiber: "Inquire", note: "Price based on customization" },
   { service: "Wash", ourFiber: "R50" },
   { service: "Relax – Restore", ourFiber: "R150" },
   { service: "Relax – Dark n Lovely", ourFiber: "R200" },
   { service: "Afro Wash", ourFiber: "R100" },
   { service: "Blow Out", ourFiber: "R100" },
   { service: "Treatment", ourFiber: "R150" },
-
-  // ========== MAKEUP & BEAUTY (NEW – from image) ==========
-  { service: "Plain (Makeup)", ourFiber: "R250" },
-  { service: "Acrylic Overlay", ourFiber: "R200" },
-  { service: "Ombre (Nails)", ourFiber: "R350" },
-  { service: "Gel + Tips Art", ourFiber: "R280" },
-  { service: "Gel Overlay", ourFiber: "R150" },
-  { service: "Manicure", ourFiber: "R250" },
-  { service: "French Tips", ourFiber: "R350" },
-  { service: "Repairs", ourFiber: "R20" },
-  { service: "Nail Art (per nail)", ourFiber: "R10" },
-  { service: "Soak Off", ourFiber: "R50" },
-  { service: "Refill", ourFiber: "R150" }
- 
-
 ];
 
 
