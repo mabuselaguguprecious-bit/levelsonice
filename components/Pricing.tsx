@@ -52,7 +52,7 @@ const hairServices = [
   { service: "Repairs", ourFiber: "R20" },
   { service: "Nail Art (per nail)", ourFiber: "R10" },
   { service: "Soak Off", ourFiber: "R50" },
-  { service: "Refill", ourFiber: "R150" },
+  { service: "Refill", ourFiber: "R150" }
  
 
 ];
