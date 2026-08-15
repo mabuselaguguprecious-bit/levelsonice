@@ -2,31 +2,41 @@
 
 import { FaCheckCircle, FaArrowUp, FaClock, FaCalendar } from "react-icons/fa";
 
-const hairServices = [
+const hairServices = [  
+  { service: "Knotless Braids", ourFiber: "R700", clientFiber: "R550", note: "Small sizes" },
+  { service: "Knotless Braids With Curls", ourFiber: "R800", clientFiber: "R600" },
+
+  { service: "Box Braids", ourFiber: "R600", clientFiber: "R450" },
+
+  { service: "Cornrows", ourFiber: "R100", note: "Wig lines medium sizes" },
+  { service: "Cornrows", ourFiber: "R150", note: "Wig lines small sizes" },
+  { service: "Cornrows", ourFiber: "R150", note: "Cornrows with style" },
+
   { service: "Normal Braids", ourFiber: "R550", clientFiber: "R400" },
-  { service: "Knotless Braids", ourFiber: "R650", clientFiber: "R500" },
-  { service: "Knotless Braids With Curls", ourFiber: "R750", clientFiber: "R500" },
-  { service: "Box Braids", ourFiber: "R550", clientFiber: "R400" },
   { service: "Amabhenghi", ourFiber: "R500", clientFiber: "R350" },
   { service: "Amabhenghi With Curls", ourFiber: "R600", clientFiber: "R400" },
   { service: "Straight Up", ourFiber: "R450", clientFiber: "R350" },
   { service: "Straight Back", ourFiber: "R350", clientFiber: "R250" },
   { service: "Straight Back With Curls", ourFiber: "R420", clientFiber: "R300" },
-  { service: "Cornrows", ourFiber: "R350", clientFiber: "R250" },
+
   { service: "Twist", ourFiber: "R700", clientFiber: "R450" },
-  { service: "Twist With Curls", ourFiber: "R750", clientFiber: "R550" },
+  { service: "Twist + Curls", ourFiber: "R750", clientFiber: "R550" },
   { service: "Bob Braids", ourFiber: "R450", clientFiber: "R300" },
   { service: "Gel Phondo", ourFiber: "R250" },
-  { service: "Passion Twist", ourFiber: "R400", note: "Client buys their own fibre" },
-  { service: "Passion Twist Small", ourFiber: "R450", note: "Client buys their own fibre" },
-  { service: "Butterfly Locs", ourFiber: "R450", note: "Client buys their own fibre" },
-  { service: "French Curls Braids", ourFiber: "R500", note: "Client buys their own fibre" },
-  { service: "French Curls Braids Small", ourFiber: "R550", note: "Client buys their own fibre" },
+
+  { service: "Passion Twist", ourFiber: "R400", note: "Client supplies own fibres" },
+  { service: "Passion Twist Small", ourFiber: "R450", note: "Client supplies own fibres" },
+  { service: "Butterfly Locs", ourFiber: "R450", note: "Client supplies own fibres" },
+  { service: "French Curls Small", ourFiber: "R550", note: "Client supplies own fibres" },
+
   { service: "Wash", ourFiber: "R50" },
-  { service: "Relax", ourFiber: "R100" },
-  { service: "Dark & Lovely", ourFiber: "R150" },
+  { service: "Relax - Restore", ourFiber: "R150" },
+  { service: "Relax - Dark n lovely", ourFiber: "R200" },
   { service: "Afro Wash", ourFiber: "R100" },
+  { service: "Blow Out", ourFiber: "R100" },
+  { service: "Treatment", ourFiber: "R150" },
 ];
+
 
 export default function Pricing() {
   return (
