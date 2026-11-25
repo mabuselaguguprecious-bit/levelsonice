@@ -3,18 +3,52 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const nails = [
-  "/images/n1.jpeg",
-  "/images/n2.jpeg",
-  "/images/n3.jpeg",
-  "/images/n4.jpeg",
-  "/images/n5.jpeg",
-  "/images/n6.jpeg",
-  "/images/n7.jpeg",
-  "/images/n8.jpeg",
-  "/images/n9.PNG",
-  "/images/n10.JPEG",
-];
+"use client"; // Add this at the very top
+import { useState, useEffect } from "react";
+
+export default function HairGallery() {
+  const [images, setImages] = useState<string[]>([]);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // REPLACE THIS WITH YOUR ACTUAL AURALINK ORG ID FROM CLERK
+  const SALON_ORG_ID = "org_xxxxxxxxxxxx"; 
+  const AURALINK_API_URL = "http://localhost:3000"; // Change to live URL later
+
+  useEffect(() => {
+    async function fetchImages() {
+      try {
+        const res = await fetch(`${AURALINK_API_URL}/api/gallery?orgId=${SALON_ORG_ID}&folder=hair`);
+        const data = await res.json();
+        if (Array.isArray(data)) setImages(data);
+      } catch (error) {
+        console.error("Failed to load images", error);
+      }
+    }
+    fetchImages();
+  }, []);
+
+  return (
+    <section id="gallery" className="bg-white py-24 lg:py-32">
+      <div className="max-w-[1700px] mx-auto px-4">
+        {/* Heading goes here... */}
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {images.map((url, index) => (
+            <img 
+              key={index} 
+              src={url} 
+              alt={`Hair image ${index + 1}`} 
+              className="w-full h-auto rounded-lg shadow-md cursor-pointer hover:opacity-80 transition"
+              onClick={() => setSelectedImage(url)}
+            />
+          ))}
+        </div>
+        
+        {/* Lightbox / Modal logic can go here using selectedImage */}
+      </div>
+    </section>
+  );
+}
 
 export default function NailsGallery() {
 
