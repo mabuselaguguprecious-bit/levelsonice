@@ -51,19 +51,15 @@ export default function NailsGallery() {
               onClick={() => setSelectedImage(image)}
               className="group relative overflow-hidden rounded-[28px] bg-white shadow-md"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
+              {/* THIS DIV IS CRITICAL FOR NEXT/IMAGE TO WORK */}
+              <div className="relative w-full h-[300px] overflow-hidden">
                 <Image
                   src={image}
                   alt={`Nail Design ${index + 1}`}
                   fill
+                  sizes="(max-width: 768px) 50vw, 20vw"
                   className="object-cover transition duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                  <div className="rounded-full bg-white/90 px-6 py-3 font-semibold text-slate-900">
-                    View Full Screen
-                  </div>
-                </div>
               </div>
             </button>
           ))}
@@ -95,30 +91,6 @@ export default function NailsGallery() {
             </a>
           </div>
         )}
-
-        <div className="h-5" />
-
-        {/* Call to Action */}
-        <div className="mt-24 text-center">
-          <h3 className="text-4xl lg:text-5xl font-bold text-slate-900">
-            Ready For Your Next Nail Set?
-          </h3>
-          <div className="h-4" />
-          <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-gray-600">
-            Whether you're looking for everyday elegance or a bold statement
-            design, our nail technicians are ready to create the perfect set
-            just for you.
-          </p>
-          <div className="h-3" />
-          <a
-            href="https://wa.me/27813906634"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center mt-10 rounded-full bg-lime-400 text-slate-900 px-8 py-4 font-bold hover:bg-lime-500 transition"
-          >
-            Book Your Appointment
-          </a>
-        </div>
       </div>
     </section>
   );
